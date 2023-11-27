@@ -27,7 +27,7 @@ const navigation = (): VerticalNavItemsType => {
     },
     {
       sectionTitle: 'Pages'
-    },
+    },  
     {
       title: 'Login',
       icon: Login,
