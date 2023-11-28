@@ -10,7 +10,6 @@ import { styled, useTheme } from '@mui/material/styles'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 
 // ** Type Import
-import { Settings } from 'src/@core/context/settingsContext'
 import { VerticalNavItemsType } from 'src/@core/layouts/types'
 
 // ** Component Imports
@@ -20,6 +19,11 @@ import VerticalNavHeader from './VerticalNavHeader'
 
 // ** Util Import
 import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
+import ModeToggler from '../../shared-components/ModeToggler'
+import UserDropdown from '../../shared-components/UserDropdown'
+
+import { useSettings } from 'src/@core/hooks/useSettings'
+import { Settings } from 'src/@core/context/settingsContext'
 
 interface Props {
   hidden: boolean
@@ -58,6 +62,8 @@ const Navigation = (props: Props) => {
     beforeVerticalNavMenuContent,
     verticalNavMenuContent: userVerticalNavMenuContent
   } = props
+
+  const { settings, saveSettings } = useSettings()
 
   // ** States
   const [groupActive, setGroupActive] = useState<string[]>([])
@@ -142,7 +148,13 @@ const Navigation = (props: Props) => {
                 />
               </List>
             )}
+
+            <Box sx={{ mb: 4, display: 'flex' }}>
+              <ModeToggler settings={settings} saveSettings={saveSettings} />
+              <UserDropdown />
+            </Box>
           </Box>
+          <Box className='actions-center' sx={{ display: 'flex', alignItems: 'center' }}></Box>
         </ScrollWrapper>
       </Box>
       {afterVerticalNavMenuContent ? afterVerticalNavMenuContent(props) : null}
