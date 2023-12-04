@@ -16,7 +16,6 @@ import themeConfig from 'src/configs/themeConfig'
 import { LayoutProps } from 'src/@core/layouts/types'
 
 // ** Components
-import AppBar from './components/vertical/appBar'
 import Navigation from './components/vertical/navigation'
 import Footer from './components/shared-components/footer'
 import ScrollToTop from 'src/@core/components/scroll-to-top'
@@ -74,11 +73,11 @@ const VerticalLayout = (props: LayoutProps) => {
           {...props}
         />
         <MainContentWrapper className='layout-content-wrapper'>
-          {/* AppBar Component */}
-          <AppBar toggleNavVisibility={toggleNavVisibility} {...props} />
+
 
           {/* Content */}
           <ContentWrapper
+            style={{position: 'relative', top: '-20px'}}
             className='layout-page-content'
             sx={{
               ...(contentWidth === 'boxed' && {

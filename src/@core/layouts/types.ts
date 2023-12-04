@@ -1,3 +1,4 @@
+
 import { ReactNode } from 'react'
 import { Settings } from 'src/@core/context/settingsContext'
 
@@ -34,7 +35,6 @@ export type LayoutProps = {
   scrollToTop?: (props?: any) => ReactNode
   saveSettings: (values: Settings) => void
   footerContent?: (props?: any) => ReactNode
-  verticalAppBarContent?: (props?: any) => ReactNode
   verticalNavMenuContent?: (props?: any) => ReactNode
   verticalNavMenuBranding?: (props?: any) => ReactNode
   afterVerticalNavMenuContent?: (props?: any) => ReactNode

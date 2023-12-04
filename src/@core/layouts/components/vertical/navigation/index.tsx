@@ -20,7 +20,6 @@ import VerticalNavHeader from './VerticalNavHeader'
 // ** Util Import
 import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
 import ModeToggler from '../../shared-components/ModeToggler'
-import UserDropdown from '../../shared-components/UserDropdown'
 
 import { useSettings } from 'src/@core/hooks/useSettings'
 import { Settings } from 'src/@core/context/settingsContext'
@@ -151,7 +150,6 @@ const Navigation = (props: Props) => {
 
             <Box sx={{ mb: 4, display: 'flex' }}>
               <ModeToggler settings={settings} saveSettings={saveSettings} />
-              <UserDropdown />
             </Box>
           </Box>
           <Box className='actions-center' sx={{ display: 'flex', alignItems: 'center' }}></Box>
