@@ -10,11 +10,11 @@ import Button from '@mui/material/Button'
 import { Divider, Typography } from '@mui/material'
 
 
-const TabAccount = (props: {setRegisteredUser(value: boolean): void}) => {
+const TabDiet = (props: {setRegisteredUser(value: boolean): void}) => {
   return (
     <CardContent>
-      <Typography variant='h4' component='h4'> Register Account </Typography>
-      <Typography mt={2} mb={5}> Register a new account in the system after this you can register the diet.</Typography>
+      <Typography variant='h4' component='h4'> Diet register </Typography>
+      <Typography mt={2} mb={5}> Register a new diet of user (user name here)</Typography>
       <Divider/>
 
       <form>
@@ -86,4 +86,4 @@ const TabAccount = (props: {setRegisteredUser(value: boolean): void}) => {
   )
 }
 
-export default TabAccount
+export default TabDiet
